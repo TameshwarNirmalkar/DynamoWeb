@@ -1,17 +1,17 @@
-import {HttpService, Promise} from 'angular2/angular2';
+import {Injectable} from 'angular2/angular2';
+import {Http, Headers} from 'angular2/http';
+
+
+@Injectable()
 export class PackageList{
-  $http, $q, cachedBooks;
-  constructor($http: HttpService, $q: Promise) {
-    this.$http = $http;
-    this.$q = $q
+  http: Http;
+  constructor(http: Http) {
+    console.log('Package list constructor');
+    this.http = http;
   }
-  getPackages() {
-    if (this.cachedBooks) {
-      return this.$q.when(this.cachedBooks);
-    }
-    return this.$http.get('/books').then(function(data){
-      this.cachedBooks = data.books;
-      return this.cachedBooks;
-    })
+  getContent() {
+    return this.http.get('http://dynamopackages.com/packages/').then(function(response) {
+      return response.json();
+    });
   }
 }

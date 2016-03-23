@@ -14,9 +14,14 @@
   "files": [
     "./app/app.ts",
     "./app/components/about/about.ts",
+    "./app/components/aurthors/aurthors.ts",
     "./app/components/home/home.ts",
+    "./app/components/packages/packages.ts",
+    "./app/components/search/search.ts",
+    "./app/constant/constant.ts",
     "./app/init.ts",
     "./app/services/NameList.ts",
+    "./app/services/packages/PackageList.ts",
     "./app/typings/_custom.d.ts",
     "./tsd_typings/angular2/angular2.d.ts",
     "./tsd_typings/angular2/router.d.ts",
@@ -30,5 +35,8 @@
     "./app/**/*.ts",
     "./tsd_typings/**/*.ts"
   ],
-  "compileOnSave": false
+  "compileOnSave": false,
+  "atom": {
+    "rewriteTsconfig": true
+  }
 }

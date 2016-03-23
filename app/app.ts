@@ -3,7 +3,8 @@ import {RouteConfig, RouterOutlet, RouterLink, routerInjectables} from 'angular2
 
 
 import {Home} from './components/home/home';
-import {About} from './components/about/about';
+//import {About} from './components/about/about';
+import {Search} from './components/search/search';
 import {Packages} from './components/packages/packages';
 import {NamesList} from './services/NameList';
 
@@ -13,8 +14,8 @@ import {NamesList} from './services/NameList';
 	viewBindings: [NamesList]
 })
 @RouteConfig([
-	{path: '/', component: Home, as: 'home'},
-	{path: '/about', component: About, as: 'about'}
+	{path: '/', component: Home, as: 'browse'},
+	{path: '/search', component: Search, as: 'search'}
 ])
 @View({
 	templateUrl: './app.html',
