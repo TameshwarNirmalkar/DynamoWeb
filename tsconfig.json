@@ -9,8 +9,7 @@
     "noLib": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "sourceMap": true,
-    pretty: true
+    "sourceMap": true
   },
   "files": [
     "./app/app.ts",
