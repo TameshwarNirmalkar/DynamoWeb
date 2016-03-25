@@ -3,7 +3,7 @@ import {Component, View, NgFor} from 'angular2/angular2';
 import {NamesList} from '../../services/NameList';
 
 @Component({
-    selector: 'aboutus-component'
+    selector: 'component-2'
 })
 @View({
     templateUrl: './components/about/about.html?v=<%= VERSION %>',

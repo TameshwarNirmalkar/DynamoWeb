@@ -1,28 +1,16 @@
-import {Injectable} from 'angular2/angular2';
-import {Http, Headers} from 'angular2/http';
-
+import {Injectable, Http} from 'angular2/angular2';
+//http://www.dynamopackages.com/packages/
 @Injectable()
 export class PackageList{
-  http: Http;
-  contentData: Array<Object>;
-  constructor(http: Http) {
-    console.warn('Package list constructor');
+  data: Array<any>;
+  constructor(private http: Http) {
     this.http = http;
+    this.data = null;
+    console.log('DataService constructor');
   }
-  getContent() {
-    return this.http.get('http://dynamopackages.com/packages/').then(function(response) {
-      return response.json();
-    });
-  }
-  getPackageContent(){
-    return this.http.get('http://dynamopackages.com/packages/')
-      .map((data: any) => data.json())
-      .subscribe(
-              (data: any) => {
-                  this.contentData = data.content;
-              },
-              err => console.log(err), // error
-              () => console.log('getPackageContent Complete') // complete
-          );
+
+  retrieveData() {
+    this.http.get('http://www.dynamopackages.com/packages/');
+    //.map(res => res.json()).subscribe(data => { this.data = data.content;})
   }
 }
